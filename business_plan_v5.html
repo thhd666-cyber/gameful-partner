@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laplus: The Guarantee Model</title>
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            /* Forest Green */
+            --secondary-color: #1B5E20;
+            /* Dark Green */
+            --accent-color: #FFC107;
+            /* Amber */
+            --bg-color: #F1F8E9;
+            /* Light Green Tint */
+            --text-color: #333;
+            --danger-color: #D32F2F;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 40px;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: var(--primary-color);
+        }
+
+        p,
+        li {
+            font-size: 1.05em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Boxes */
+        .highlight-box {
+            background-color: #fffbeb;
+            border-left: 5px solid var(--accent-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .defense-box {
+            background-color: #eff6ff;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .danger-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--danger-color);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .mermaid {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            font-size: 0.85em;
+        }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="border-bottom: none; margin-bottom: 5px;">Laplus</h1>
+        <div style="text-align: center; font-size: 1.2em; color: var(--secondary-color); margin-bottom: 40px;">
+            The Guarantee Model: Transforming Hobby into Infrastructure
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Section 1: Executive Summary -->
+        <section>
+            <h2>1. Executive Summary: The Opportunity</h2>
+            <p><strong>我々は「情報」を売ることをやめ、「結果」を売ります。</strong></p>
+            <p>園芸市場は巨大ですが、「50%が失敗し、二度と戻ってこない」という構造的な欠陥を抱えています。<br>
+                Laplusは、AIによる完全管理と金融的アプローチ（InsurTech）を組み合わせ、<strong>「枯れたら全額保証（新品交換）」</strong>という衝撃的な価値提案で、この「失敗の壁」を破壊します。
+            </p>
+
+            <div class="highlight-box">
+                <strong>💡 Core Value Definition:</strong><br>
+                <ul>
+                    <li><strong>Old Gardening:</strong> "枯れるのが怖くて始められない / 続けられない"</li>
+                    <li><strong>Laplus:</strong> "AIに従えば、絶対に損はさせない (Insurance)"</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Problem & Solution -->
+        <section>
+            <h2>2. Problem & Solution</h2>
+
+            <h3>The Problem: The "Black Box" of Nature</h3>
+            <p>初心者が園芸に失敗する最大の理由は、自然がブラックボックスだからです。</p>
+            <ul>
+                <li>「水やり3年」と言われるほどの暗黙知。</li>
+                <li>土の中が見えず、根腐れや水不足に気づけない。</li>
+                <li>一度枯らすと「自分には向いていない」と自己嫌悪に陥り、市場から退場する。</li>
+            </ul>
+
+            <h3>The Solution: "Risk-Free" Gardening</h3>
+            <p>このブラックボックスを、テクノロジーとファイナンスで透明化・リスクヘッジします。</p>
+            <div class="defense-box">
+                <ul>
+                    <li><strong>Tech (AI Management):</strong>
+                        土の状態を画像解析し、水やり・肥料のタイミングを完全指示。「失敗させない」管理。</li>
+                    <li><strong>Finance (Guarantee):</strong>
+                        それでも枯れたら、何度でも新品と交換。「失敗しても損しない」保証。</li>
+                </ul>
+                </ul>
+            </div>
+
+            <h3>2-3. Competitive Landscape (Blue Ocean Strategy)</h3>
+            <p>既存プレイヤーは「情報」か「物」を売っています。「リスク」を取っているのはLaplusだけです。</p>
+            <div class="mermaid">
+                quadrantChart
+                x-axis "Selling Information (Tool)" --> "Selling Results (Guarantee)"
+                y-axis "User's Risk (Do it yourself)" --> "Provider's Risk (We cover it)"
+                quadrant-1 "Laplus (InsurTech)"
+                quadrant-2 "Rental Green (B2B)"
+                quadrant-3 "Home Centers / D2C Shops"
+                quadrant-4 "AI Apps (PictureThis, GreenSnap)"
+                "Laplus": [0.85, 0.85]
+                "Rental": [0.8, 0.6]
+                "D2C/Retail": [0.2, 0.3]
+                "AI Apps": [0.2, 0.15]
+            </div>
+            <ul>
+                <li><strong>Apps (PictureThis, GreenSnap):</strong>
+                    「判定」はくれますが、枯れても責任は取りません（情報の非対称性は解消されない）。
+                </li>
+                <li><strong>Retailers (Home Centers):</strong>
+                    「苗」を売ったら終わりです。むしろ枯れた方がリピートに繋がる「焼畑モデル」です。
+                </li>
+                <li><strong>Laplus:</strong>
+                    唯一、<strong>「枯れたらコスト（損）になる」</strong>プレイヤーです。だからこそ、ユーザーと利害が完全に一致（本気で枯らさない）します。
+                </li>
+            </ul>
+
+            <div class="defense-box">
+                <strong>🛡️ IP Strategy (参入障壁)</strong><br>
+                以下の技術について特許出願準備中です。
+                <ol>
+                    <li><strong>Soil-Adaptive Logic:</strong> 「土の成分」×「天気」で乾燥速度を計算するアルゴリズム。</li>
+                    <li><strong>Compliance Trigger:</strong> 「AI指示への従順度」で保証可否を自動判定するシステム。</li>
+                    <li><strong>Mentor Evaluation:</strong> 「初心者の成功（感謝）」をトリガーに、指導者に「徳」を付与する評価システム。</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section 3: Product -->
+        <section>
+            <h2>3. Product: The "Freedom" Guarantee Kit</h2>
+            <p>Laplusのコア商品は「苗」でも「鉢」でも「土」でもありません。<strong>「結果保証（Guarantee）」</strong>そのものです。</p>
+
+            <div class="highlight-box">
+                <strong>📦 Freedom & Security Model</strong><br>
+                ユーザーは、近所のホームセンターで好きな「苗・土・鉢」を自由に選べます。<br>
+                Laplusは、それらを使って<strong>「絶対に失敗させない運用」</strong>だけをサブスクリプションで提供します。<br>
+                <ul>
+                    <li><strong>Step 1: Barcode Scan (登録):</strong>
+                        <ul>
+                            <li>買ってきた「苗・土・鉢」のバーコードをカメラで読み取ります。</li>
+                            <li>AIが「品種 × 土の量(保水性) × 鉢の材質」の組み合わせを解析し、あなた専用の栽培カレンダーを生成します。</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 2: AI Diary (管理):</strong>
+                        <ul>
+                            <li>週に1回、AIのガイドに従って写真を撮り、日記を残します。</li>
+                            <li>これが「生存確認」となり、保証の適用条件（Compliance）となります。</li>
+                        </ul>
+                    </li>
+                    <li><strong>Step 3: Guarantee (保証):</strong>
+                        <ul>
+                            <li>万が一枯れた場合は、日記の記録に基づき、直ちに代替苗が発送されます。</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: Business Model -->
+        <section>
+            <h2>4. Business Model & Unit Economics</h2>
+            <p>「保険ビジネス」として、失敗率（損害率）をコントロールすることで利益を生み出します。</p>
+
+            <div class="mermaid">
+                graph LR
+                User((User)) -- "Subscription Fees<br>(Guarantee)" --> Laplus
+                Laplus -- "AI Guidance<br>(Risk Control)" --> User
+                User -- "Failure Report<br>(Claim)" --> Laplus
+                Laplus -- "Replacement Cost<br>(Benefit)" --> User
+            </div>
+
+            <h3>Why it Works? (収益性の根拠)</h3>
+            <div class="highlight-box">
+                <strong>📉 The J-Curve Logic (利益率の向上):</strong><br>
+                Year 1はAI学習期間のため失敗率が高いですが、データが蓄積されるYear 3以降、失敗率は劇的に下がります。<br>
+                <strong>「収入（保険料）は一定のまま、支出（交換コスト）だけが減っていく」</strong>ため、利益率は構造的に右肩上がりになります。
+            </div>
+
+            <div class="defense-box" style="border-left-color: var(--secondary-color); background-color: #f0fdf4;">
+                <strong>📊 Unit Economics Evidence (黒字化の数学的証明)</strong><br>
+                <ul>
+                    <li><strong>損益分岐点 (Break-even):</strong>
+                        失敗率 <strong>66%</strong> までは赤字になりません。<br>
+                        (引当金 ¥1,000 ÷ 交換コスト ¥1,500 ≒ 0.66)<br>
+                        現状の初心者失敗率は約50%のため、AIなしでもトントン、AIがあれば確実な利益が出ます。</li>
+                    <li><strong>Seasonality Risk (季節性の壁):</strong>
+                        <ul>
+                            <li><strong>Fail Fast:</strong> 「手遅れ」になる前にAIが早期交換を指示。</li>
+                            <li><strong>Next Season Ticket:</strong> シーズン終了後の失敗は「来年の予約券」に振替し、LTVを維持。</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="danger-box">
+                <strong>💰 Risk Capital (Solvency Margin)</strong><br>
+                「全員が同時に失敗したら破産するのでは？」という投資家の懸念への回答です。<br>
+                <ul>
+                    <li><strong>Worst Case Scenario:</strong>
+                        Year 1 (2,000人) が初月に全員失敗した場合のコストは <strong>300万円</strong> (¥1,500 × 2,000) です。
+                    </li>
+                    <li><strong>Required Liquidity (必要現預金):</strong>
+                        売上 (¥4,980 × 2,000 = 1,000万円) が先に入金されるため、キャッシュフローは回り続けます。<br>
+                        しかし、不測の事態（配送事故・品種間違い等）に備え、<strong>500万円（ユーザー数 × ¥2,500）</strong> の現預金を常に確保する財務規律を設けます。
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: Growth Strategy -->
+        <section>
+            <h2>5. Partnership & Global Scale</h2>
+
+            <h3>5-1. Trojan Horse Strategy (トロイの木馬戦略)</h3>
+            <p>大手ホームセンターやメーカーに入り込むためのステップ。</p>
+            <ul>
+                <li><strong>Phase 1 (DTC):</strong> 自社サイトで「保証」を直販。「レシート買取」でデータを蓄積。</li>
+                <li><strong>Phase 2 (Data Sales):</strong> 「御社の土、ここが弱点ですよ」とデータを武器にメーカーへ提案。</li>
+                <li><strong>Phase 3 (B2B2C):</strong> メーカー製品に「Laplus保証」を標準バンドルし、全国展開。</li>
+            </ul>
+
+            <h3>5-2. Global Expansion</h3>
+            <p>このモデルの真価は、日本（Global North）よりも、むしろ**気候リスクの高い地域（Global South）**で発揮されます。</p>
+            <ul>
+                <li><strong>Global North (先進国):</strong> "Zen & Wellness" - 心の安らぎとしての園芸保証。</li>
+                <li><strong>Global South (途上国):</strong> "Micro-Crop Insurance" - 貧困農家のための収穫保証インフラ。</li>
+            </ul>
+
+            <h3>5-3. Community Strategy (The "Mentor" Cycle)</h3>
+            <p><strong>「初心者の質問に、プロが疲弊する」</strong>というコミュニティの崩壊を防ぐため、両者をAIがつなぎ、貢献を「徳」として可視化します。</p>
+            <div class="highlight-box" style="background-color: #f3e5f5; border-left-color: #9c27b0;">
+                <ul>
+                    <li><strong> Beginner (The Protected):</strong>
+                        原則としてAIが一次対応しますが、難しいケースは<strong>「認定された優良Senior（Mentor）」</strong>から直接アドバイスが届きます。マサカリではなく、神の声として感謝されます。
+                    </li>
+                    <li><strong> Pro-Senior (The Mentor):</strong>
+                        <ul>
+                            <li><strong>Problem:</strong> ただ教えるだけでは疲れる。</li>
+                            <li><strong>Solution (徳システム):</strong>
+                                自分のアドバイスでBeginnerが見事収穫に成功し、<strong>「ありがとう（Thanks）」</strong>が送られると、Seniorに<strong>「徳（Status
+                                    Token）」</strong>が付与されます。<br>
+                                「教え子が育つ喜び」をシステム化し、善意のサイクルを回します。
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>※人間関係のストレスを排除し、純粋な「善意の知識」だけをAIが吸い上げて還流させるシステムです。</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Validation Plan -->
+        <section>
+            <h2>6. Validation Plan (事業成立性の検証)</h2>
+            <p>机上の空論で終わらせないための、低予算かつ具体的な検証ロードマップ。</p>
+
+            <table>
+                <tr>
+                    <th>Phase</th>
+                    <th>Action</th>
+                    <th>KPI (Success Criteria)</th>
+                </tr>
+                <tr>
+                    <td><strong>1. Demand</strong><br>(Smoke Test)</td>
+                    <td>LPでの広告テスト。「保証付き」への反応（CVR）を計測。</td>
+                    <td>CVR > 2.0%<br>CPA < ¥1,500</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Risk</strong><br>(Wizard of Oz)</td>
+                    <td>人力AIでのアナログ運用テスト。実際の失敗率を測定。</td>
+                    <td>生存率 > 70%<br>(失敗率 < 30%)</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Ops</strong><br>(Logistics)</td>
+                    <td>レシート買取フローの運用負荷テスト。</td>
+                    <td>不正申告率 < 5%</td>
+                </tr>
+            </table>
+
+            <div class="highlight-box">
+                これらを低予算（総額10万円程度）で検証し、数字で確証を得てから開発に着手します。
+            </div>
+        </section>
+
+        <!-- Section 7: Conclusion -->
+        <section>
+            <h2>7. Conclusion</h2>
+            <p>Laplusは単なるアプリではありません。<strong>「自然の不確実性」をコントロール可能なリスクに変えるインフラ</strong>です。</p>
+            <p>国内では<strong>「癒やしの保証」</strong>、世界では<strong>「食の保証」</strong>へ。<br>
+                テクノロジーで自然との付き合い方をアップデートします。</p>
+        </section>
+
+        <!-- Appendix: Financial Detail -->
+        <section>
+            <h2>Appendix: 5-Year P&L Projection</h2>
+            <p>詳細な損益予測（単位: 百万円）。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Year 1<br><small>(PMF)</small></th>
+                        <th>Year 2<br><small>(Local)</small></th>
+                        <th>Year 3<br><small>(National)</small></th>
+                        <th>Year 4<br><small>(Scale)</small></th>
+                        <th>Year 5<br><small>(Global)</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Active Users</strong></td>
+                        <td>2,000</td>
+                        <td>15,000</td>
+                        <td>80,000</td>
+                        <td>300,000</td>
+                        <td>1,000,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenue (売上高)</strong></td>
+                        <td><strong>30</strong></td>
+                        <td><strong>350</strong></td>
+                        <td><strong>2,100</strong></td>
+                        <td><strong>8,500</strong></td>
+                        <td><strong>32,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td>　Starter/Custom Kit</td>
+                        <td>20</td>
+                        <td>200</td>
+                        <td>1,000</td>
+                        <td>3,000</td>
+                        <td>8,000</td>
+                    </tr>
+                    <tr>
+                        <td>　Subscription (Recurring)</td>
+                        <td>10</td>
+                        <td>150</td>
+                        <td>1,100</td>
+                        <td>5,500</td>
+                        <td>24,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>COGS (売上原価)</strong></td>
+                        <td><strong>18</strong></td>
+                        <td><strong>190</strong></td>
+                        <td><strong>1,050</strong></td>
+                        <td><strong>3,800</strong></td>
+                        <td><strong>12,800</strong></td>
+                    </tr>
+                    <tr style="background-color: #fffbeb;">
+                        <td>　<em>Loss Ratio (失敗率)</em></td>
+                        <td style="color: red;"><em>30%</em></td>
+                        <td><em>20%</em></td>
+                        <td><em>15%</em></td>
+                        <td><em>10%</em></td>
+                        <td style="color: green; font-weight:bold;"><em>8%</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gross Profit (粗利)</strong></td>
+                        <td><strong>12</strong></td>
+                        <td><strong>160</strong></td>
+                        <td><strong>1,050</strong></td>
+                        <td><strong>4,700</strong></td>
+                        <td><strong>19,200</strong></td>
+                    </tr>
+                    <tr>
+                        <td>　<em>Gross Margin</em></td>
+                        <td><em>40%</em></td>
+                        <td><em>45%</em></td>
+                        <td><em>50%</em></td>
+                        <td><em>55%</em></td>
+                        <td><em>60%</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>SGA (販管費)</strong></td>
+                        <td>25</td>
+                        <td>150</td>
+                        <td>900</td>
+                        <td>3,500</td>
+                        <td>14,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Op. Income (営業利益)</strong></td>
+                        <td style="color: red;"><strong>▲13</strong></td>
+                        <td><strong>10</strong></td>
+                        <td><strong>150</strong></td>
+                        <td><strong>1,200</strong></td>
+                        <td><strong>5,200</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Laplus Project. All Rights Reserved.<br>
+        Confidential - Investor Presentation Material
+    </footer>
+
+</body>
+
+</html>
