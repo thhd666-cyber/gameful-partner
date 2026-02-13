@@ -266,14 +266,46 @@
         <!-- Section 4: Business Model -->
         <section>
             <h2>4. Business Model & Unit Economics</h2>
-            <p>「保険ビジネス」として、失敗率（損害率）をコントロールすることで利益を生み出します。</p>
+            <p>「保険ビジネス」として、失敗率（損害率）をコントロールすることで利益を生み出します。<br>
+                市場調査に基づき、栽培規模に合わせた<strong>「3段階の定額会員プラン (Green Pass)」</strong>を用意しました。<br>
+                苗の平均価格（約¥300）を基準に、ユーザーが得する価格設定ながら、当社も利益が出る水準に設計しています。</p>
+
+            <div class="highlight-box">
+                <strong>🎟️ Green Pass Membership Tiers</strong>
+                <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                    <tr style="background-color: #f8f9fa;">
+                        <th style="padding: 8px; border: 1px solid #ddd;">Plan</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Monthly Fee</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Coverage</th>
+                        <th style="padding: 8px; border: 1px solid #ddd;">Target User</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;"><strong>Light</strong></td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">¥500</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Up to <strong>5</strong> plants</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">ベランダ菜園 (プランター2個分)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;"><strong>Standard</strong></td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">¥980</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Up to <strong>15</strong> plants</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">庭での家庭菜園 (ガチ勢)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #ddd;"><strong>Pro</strong></td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">¥1,980</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">Up to <strong>30</strong> plants</td>
+                        <td style="padding: 8px; border: 1px solid #ddd;">貸し農園 (10平米クラス)</td>
+                    </tr>
+                </table>
+            </div>
 
             <div class="mermaid">
                 graph LR
-                User((User)) -- "Subscription Fees<br>(Guarantee)" --> Laplus
+                User((User)) -- "Membership Fee<br>(¥500 - ¥1,980)" --> Laplus
                 Laplus -- "AI Guidance<br>(Risk Control)" --> User
                 User -- "Failure Report<br>(Claim)" --> Laplus
-                Laplus -- "Replacement Cost<br>(Benefit)" --> User
+                Laplus -- "Replacement Coupon<br>(Home Center)" --> User
             </div>
 
             <h3>Why it Works? (収益性の根拠)</h3>
@@ -287,9 +319,11 @@
                 <strong>📊 Unit Economics Evidence (黒字化の数学的証明)</strong><br>
                 <ul>
                     <li><strong>損益分岐点 (Break-even):</strong>
-                        失敗率 <strong>66%</strong> までは赤字になりません。<br>
-                        (引当金 ¥1,000 ÷ 交換コスト ¥1,500 ≒ 0.66)<br>
-                        現状の初心者失敗率は約50%のため、AIなしでもトントン、AIがあれば確実な利益が出ます。</li>
+                        提携HCでの店舗受取（O2O）のため配送費はゼロです。<br>
+                        <strong>Light Plan (¥500/月)</strong>
+                        の場合、原価300円の苗を<strong>「毎月1.6回以上」</strong>（年間19回）枯らされて初めて赤字になります。<br>
+                        通常、プランター栽培でも失敗は「年2-3回」程度であり、原価率20-30%程度の高収益体質が維持できます。
+                    </li>
                     <li><strong>Seasonality Risk (季節性の壁):</strong>
                         <ul>
                             <li><strong>Fail Fast:</strong> 「手遅れ」になる前にAIが早期交換を指示。</li>
@@ -420,7 +454,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Active Users</strong></td>
+                        <td><strong>Active Members</strong></td>
                         <td>2,000</td>
                         <td>15,000</td>
                         <td>80,000</td>
@@ -429,59 +463,51 @@
                     </tr>
                     <tr>
                         <td><strong>Revenue (売上高)</strong></td>
-                        <td><strong>30</strong></td>
-                        <td><strong>350</strong></td>
-                        <td><strong>2,100</strong></td>
-                        <td><strong>8,500</strong></td>
-                        <td><strong>32,000</strong></td>
+                        <td><strong>20</strong></td>
+                        <td><strong>180</strong></td>
+                        <td><strong>1,200</strong></td>
+                        <td><strong>5,400</strong></td>
+                        <td><strong>20,000</strong></td>
                     </tr>
                     <tr>
-                        <td>　Starter/Custom Kit</td>
-                        <td>20</td>
-                        <td>200</td>
-                        <td>1,000</td>
-                        <td>3,000</td>
-                        <td>8,000</td>
+                        <td style="color: #666; font-size: 0.9em;">　<em>ARPU (Avg ¥800/mo)</em></td>
+                        <td>Green Pass</td>
+                        <td>Green Pass</td>
+                        <td>Green Pass</td>
+                        <td>Green Pass</td>
+                        <td>Green Pass</td>
                     </tr>
                     <tr>
-                        <td>　Subscription (Recurring)</td>
-                        <td>10</td>
-                        <td>150</td>
-                        <td>1,100</td>
-                        <td>5,500</td>
-                        <td>24,000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>COGS (売上原価)</strong></td>
-                        <td><strong>18</strong></td>
-                        <td><strong>190</strong></td>
-                        <td><strong>1,050</strong></td>
-                        <td><strong>3,800</strong></td>
-                        <td><strong>12,800</strong></td>
+                        <td><strong>COGS (交換コスト)</strong></td>
+                        <td><strong>10</strong></td>
+                        <td><strong>70</strong></td>
+                        <td><strong>360</strong></td>
+                        <td><strong>1,350</strong></td>
+                        <td><strong>4,000</strong></td>
                     </tr>
                     <tr style="background-color: #fffbeb;">
-                        <td>　<em>Loss Ratio (失敗率)</em></td>
-                        <td style="color: red;"><em>30%</em></td>
-                        <td><em>20%</em></td>
-                        <td><em>15%</em></td>
-                        <td><em>10%</em></td>
-                        <td style="color: green; font-weight:bold;"><em>8%</em></td>
+                        <td>　<em>Loss Ratio (補償率)</em></td>
+                        <td style="color: red;"><em>50%</em></td>
+                        <td><em>40%</em></td>
+                        <td><em>30%</em></td>
+                        <td><em>25%</em></td>
+                        <td style="color: green; font-weight:bold;"><em>20%</em></td>
                     </tr>
                     <tr>
                         <td><strong>Gross Profit (粗利)</strong></td>
-                        <td><strong>12</strong></td>
-                        <td><strong>160</strong></td>
-                        <td><strong>1,050</strong></td>
-                        <td><strong>4,700</strong></td>
-                        <td><strong>19,200</strong></td>
+                        <td><strong>10</strong></td>
+                        <td><strong>110</strong></td>
+                        <td><strong>840</strong></td>
+                        <td><strong>4,050</strong></td>
+                        <td><strong>16,000</strong></td>
                     </tr>
                     <tr>
                         <td>　<em>Gross Margin</em></td>
-                        <td><em>40%</em></td>
-                        <td><em>45%</em></td>
-                        <td><em>50%</em></td>
-                        <td><em>55%</em></td>
-                        <td><em>60%</em></td>
+                        <td>50%</td>
+                        <td>61%</td>
+                        <td>70%</td>
+                        <td>75%</td>
+                        <td><strong>80%</strong></td>
                     </tr>
                     <tr>
                         <td><strong>SGA (販管費)</strong></td>
