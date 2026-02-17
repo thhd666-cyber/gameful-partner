@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laplus: Pre-Seed Pitch Deck</title>
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #1B5E20;
+            --accent: #FFC107;
+            --bg: #F3F4F6;
+            --text: #1F2937;
+            --danger: #DC2626;
+            --vision: #2563EB;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Hiragino Sans', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Slide Container */
+        .slide {
+            background: white;
+            width: 100%;
+            max-width: 960px;
+            min-height: 540px;
+            margin-bottom: 50px;
+            padding: 50px 60px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            position: relative;
+            box-sizing: border-box;
+            border-top: 8px solid var(--primary);
+            page-break-after: always;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: #9CA3AF;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--secondary);
+            font-size: 2.8em;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 2em;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p, li {
+            font-size: 1.15em;
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        /* Layout Utilities */
+        .flex { display: flex; gap: 30px; }
+        .flex-1 { flex: 1; }
+
+        /* Highlight Boxes */
+        .box {
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .box-highlight { background: #FFFBEB; border-left: 6px solid var(--accent); }
+        .box-danger { background: #FEF2F2; border-left: 6px solid var(--danger); }
+        .box-vision { background: #EFF6FF; border-left: 6px solid var(--vision); }
+        .box-defense { background: #F0FDF4; border-left: 6px solid var(--primary); }
+        .box-neutral { background: #F3F4F6; border-left: 6px solid #9CA3AF; }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #E5E7EB;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        th { background: #F9FAFB; color: var(--secondary); }
+
+        /* Speaker Note */
+        .speaker-note {
+            background: #1F2937;
+            color: #F9FAFB;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 0.95em;
+            border-left: 5px solid var(--accent);
+        }
+        .speaker-note::before {
+            content: "🎙️ Speaker Note: ";
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* TAM SAM SOM Visual */
+        .market-visual {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .circle {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .circle:hover { transform: scale(1.05); }
+        .c-tam { width: 220px; height: 220px; background: #C8E6C9; color: var(--secondary); border: 3px solid #81C784;}
+        .c-sam { width: 160px; height: 160px; background: #66BB6A; }
+        .c-som { width: 120px; height: 120px; background: var(--primary); box-shadow: 0 0 20px rgba(46,125,50,0.4); }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            background: white;
+        }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+
+<body>
+
+    <div class="slide">
+        <h1>Laplus</h1>
+        <div class="subtitle">結果を保証する園芸インフラ</div>
+        
+        <div class="box box-highlight" style="text-align: center; padding: 40px 20px; margin-top: 50px;">
+            <p style="font-size: 1.5em; font-weight: bold; color: var(--secondary); margin-bottom: 20px;">
+                ラプラスは園芸初心者の枯れる恐怖を、<br>AI管理と枯れ保証で解決し、<br>選ぶ自由と成功体験を販売します。
+            </p>
+        </div>
+        
+        <div class="speaker-note">
+            こんにちは。ラプラスです。我々はアプリという「手段」や「情報」を売るのをやめました。我々が販売するのは、植物を枯らさなかったという「結果（成功体験）」そのものです。
+        </div>
+        <div class="slide-number">1 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Problem: 50%が脱落する「失敗の壁」</h2>
+        <p>10兆円という巨大な世界園芸市場。しかし、初心者の50%は成功確率が半々の「自然というブラックボックス」に直面し、市場から退場しています。</p>
+        
+        <div class="flex">
+            <div class="flex-1 box box-danger">
+                <h3 style="margin-top:0; color:var(--danger);">物理的損失ではない</h3>
+                <p>初心者が退場する理由は、数百円の苗を失うことでも、土の処分が面倒なことだけでもありません。</p>
+            </div>
+            <div class="flex-1 box box-danger">
+                <h3 style="margin-top:0; color:var(--danger);">真のペインは「自己嫌悪」</h3>
+                <p>枯らしたという<strong>「自分には向いていない」「生き物を殺してしまった」という深い自己嫌悪とトラウマ</strong>。これこそが顧客を完全に離脱させる根本原因です。</p>
+            </div>
+        </div>
+
+        <div class="speaker-note">
+            投資家の皆様、「ただの趣味の失敗」と侮らないでください。この自己嫌悪こそがユーザーのLTVを完全に消滅させ、10兆円市場のパイプに空いた最大の穴なのです。
+        </div>
+        <div class="slide-number">2 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Why Now: 4つの追い風が交差する特異点</h2>
+        <p>過去には不可能で、未来では手遅れになる。「今」でなければならない理由があります。</p>
+        
+        <div class="flex" style="flex-wrap: wrap;">
+            <div class="flex-1 box box-neutral" style="min-width: 40%;">
+                <h3 style="margin-top:0; color:var(--text);">1. 市場 (Market)</h3>
+                <p>パンデミック以降、世界的に園芸ブームが定着。生活の一部へ。</p>
+            </div>
+            <div class="flex-1 box box-neutral" style="min-width: 40%;">
+                <h3 style="margin-top:0; color:var(--text);">2. 技術 (Tech)</h3>
+                <p>画像解析AIのコモディティ化により、<strong>安価で高精度な状態判定</strong>が可能になり、ゲームのルールが変わった。</p>
+            </div>
+            <div class="flex-1 box box-neutral" style="min-width: 40%;">
+                <h3 style="margin-top:0; color:var(--text);">3. 社会 (Social)</h3>
+                <p>所有から体験へ。自分の食べるものを自分で育てるサステナビリティへのシフト。</p>
+            </div>
+            <div class="flex-1 box box-vision" style="min-width: 40%;">
+                <h3 style="margin-top:0; color:var(--vision);">4. 潮流 (SaaS is Dead)</h3>
+                <p>AIにより「情報を出すだけのアプリ」の価値はゼロへ。企業が結果リスクを負う<strong>「Warranty-Tech（品質保証インフラ）」</strong>が次のメガビジネスになる。</p>
+            </div>
+        </div>
+        <div class="slide-number">3 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Solution: リスクゼロの園芸体験</h2>
+        <p>ブラックボックスをこじ開ける「二段構え」のアプローチです。</p>
+        
+        <div class="flex">
+            <div class="flex-1 box box-defense">
+                <h3 style="margin-top:0;">🤖 失敗させない (AI管理)</h3>
+                <p>土と植物の状態をスマホのカメラで画像解析し、水やりや肥料のタイミングを完全に個別指示します。</p>
+            </div>
+            <div class="flex-1 box box-highlight">
+                <h3 style="margin-top:0;">💸 失敗しても損しない (枯れ保証)</h3>
+                <p>指示通りに育成し、それでも枯れたら何度でも新品交換クーポンを発行します。</p>
+            </div>
+        </div>
+
+        <div class="box box-neutral" style="padding: 15px 25px;">
+            <p style="margin: 0;"><strong>🚫 やらないこと (アセットライト戦略):</strong><br>
+            我々は独自の「苗・鉢・土」の販売や在庫保有を一切行いません。ユーザーの<strong>「自由に選ぶ権利」</strong>を尊重し、我々は結果保証のインフラ提供に徹します。</p>
+        </div>
+        <div class="slide-number">4 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Product: シンプルな3ステップ</h2>
+        <p>ユーザーの体験は極限まで削ぎ落とされています。</p>
+        
+        <div class="mermaid">
+            graph LR
+            A[1. 登録<br><small>HCで買った苗と<br>レシートを撮影</small>] --> B[2. 記録<br><small>週1回写真を撮り<br>AIの指示に従う</small>]
+            B --> C{結果}
+            C -->|枯れたら| D[3. 交換<br><small>HC交換クーポン</small>]
+            C -->|花が咲いたら| E[3. 成功ボーナス<br><small>翌月無料など</small>]
+            
+            style A fill:#E8F5E9,stroke:#2E7D32
+            style B fill:#E8F5E9,stroke:#2E7D32
+            style D fill:#FFFBEB,stroke:#FFC107
+            style E fill:#EFF6FF,stroke:#2563EB
+        </div>
+
+        <div class="speaker-note">
+            最初の「レシート登録」は不正利用を防ぐ強力なフィルターです。そして最後の「成功ボーナス」は、ユーザーの成功と我々の事業の成功（LTV向上）を直接結びつける巧妙な仕組みです。
+        </div>
+        <div class="slide-number">5 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Market Size: TAM / SAM / SOM</h2>
+        <p>10兆円の夢を語る前に、地に足のついた「最初の橋頭堡」を築きます。</p>
+
+        <div class="tam-container">
+            <div class="circle-container">
+                <div class="circle tam-c">
+                    <span style="font-size: 1.5em;">TAM</span>
+                    <span style="font-size: 0.8em; font-weight: normal; margin-top:5px;">世界の園芸市場<br>10兆円</span>
+                </div>
+            </div>
+            <div class="circle-container">
+                <div class="circle sam-c">
+                    <span style="font-size: 1.3em;">SAM</span>
+                    <span style="font-size: 0.8em; font-weight: normal; margin-top:5px;">国内の初心者市場</span>
+                </div>
+            </div>
+            <div class="circle-container">
+                <div class="circle som-c">
+                    <span style="font-size: 1.2em;">SOM</span>
+                    <span style="font-size: 0.8em; font-weight: normal; margin-top:5px;">初年度<br>1,550人</span>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-weight: bold; margin-top: 30px;">
+            SOM定義: 「失敗経験を持ち、失敗を極度に恐れる首都圏の賃貸住宅居住者」
+        </p>
+        <div class="slide-number">6 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Business Model: 月額500円、原価率33%の安定収益</h2>
+        <p>投資家の最大の懸念「わざと枯らす人による破綻」に対する完全回答です。</p>
+
+        <div class="box box-defense">
+            <h3 style="margin-top:0;">⚖️ 成功と失敗の還元額を同額にする「対称性の魔法」</h3>
+            <p>1シーズン（3ヶ月）でユーザーから <strong>売上1,500円</strong> を得た場合：</p>
+            <ul>
+                <li><strong>失敗した時の保証枠：</strong> 上限 500円（実費限度ルール）</li>
+                <li><strong>成功した時のボーナス：</strong> 500円（翌月無料権など）</li>
+            </ul>
+            <p style="margin-top: 20px; font-weight: bold;">
+                ユーザーは「どちらに転んでも損をしない」心理状態になり、純粋に育成を楽しめます。<br>
+                同時に事業者側は、気候変動のような予測不能なリスクが起きても、<strong>原価率を常に33%に固定</strong>できます。このリスクヘッジこそがビジネスモデルの心臓部です。
+            </p>
+        </div>
+        <div class="slide-number">7 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Go-To-Market: トロイの木馬戦略</h2>
+        <p>スケール可能な事業であることを示す2段階のアプローチです。</p>
+
+        <table style="margin-top: 20px;">
+            <tr>
+                <th style="width: 20%;">Year 1</th>
+                <td><strong>D2CによるPMF検証:</strong> ウェブ広告で初期1,550人を獲得し、CPAやCVRの仮説を検証します。</td>
+            </tr>
+            <tr>
+                <th>Year 2</th>
+                <td><strong>ホームセンター(HC)とのO2O提携:</strong> その実績を持ちHCと提携します。HC側は「一度失敗して来なくなった顧客が保証をきっかけに戻ってくる」「成功した顧客もボーナスを使いにくる」という<strong>強烈な送客効果（Win-Win）</strong>を得られます。</td>
+            </tr>
+        </table>
+
+        <div class="box box-vision" style="padding: 15px 25px; margin-top: 30px;">
+            <p style="margin:0;"><strong>💡 The Data Paradox（データパラドックス）への回答</strong><br>
+            「全員が成功したらAIを賢くする失敗データが取れなくなるのでは？」<br>
+            → 失敗が消滅した後は「どうすればより甘くなるか（最適化）」のデータへ価値がシフトします。我々は事業を長期的に見据えています。</p>
+        </div>
+        <div class="slide-number">8 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Traction & Proof: 検証ロードマップ</h2>
+        <p>実績ゼロのプレシード段階。限られた資金で、どうやってリスクを一つずつ潰していくか。</p>
+
+        <table>
+            <tr>
+                <th style="width: 20%;">Phase</th>
+                <th>検証アクション</th>
+                <th style="width: 30%;">KPI (クリア条件)</th>
+            </tr>
+            <tr>
+                <td><strong>1. Demand</strong><br><span style="font-size:0.8em;">(Smoke Test)</span></td>
+                <td>LPでの広告テスト。「保証付き」への支払意欲を計測。</td>
+                <td>CVR > 2.0%<br>CPA < ¥1,500</td>
+            </tr>
+            <tr style="background-color: #FFFBEB;">
+                <td><strong>2. Risk</strong><br><span style="font-size:0.8em;">(Wizard of Oz)</span></td>
+                <td>人力でのAI運用テスト（オズの魔法使い）。実際のタスク遵守率と失敗率を測定。</td>
+                <td>生存率 > 70%<br>(失敗率 < 30%)</td>
+            </tr>
+            <tr>
+                <td><strong>3. Ops</strong><br><span style="font-size:0.8em;">(Digital Refund)</span></td>
+                <td>実際のユーザーテスト。「現物交換」ではなく「Amazonギフト返金」での満足度と不正発生率を検証。</td>
+                <td>不正申告率 < 5%<br>満足度 > 4.5</td>
+            </tr>
+        </table>
+        
+        <div class="speaker-note">
+            多額の資金を投じてプロダクトを開発する前に、低予算でビジネスモデルの核となる仮説を検証します。
+        </div>
+        <div class="slide-number">9 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Competition & Moat: 競合優位性と参入障壁</h2>
+        <p>「誰がリスクを取るか」というビジネスモデルの根幹で、全く新しいポジションにいます。</p>
+
+        <div class="flex">
+            <div class="flex-1">
+                <div class="mermaid">
+                    quadrantChart
+                    x-axis "情報を売る (Tools)" --> "結果を売る (Warranty)"
+                    y-axis "顧客がリスクを負う (DIY)" --> "事業者がリスクを負う (Guaranteed)"
+                    quadrant-1 "Laplus"
+                    quadrant-2 "B2B Rental Green"
+                    quadrant-3 "DIY / Retailers"
+                    quadrant-4 "AI ID Apps"
+                    "Laplus": [0.85, 0.85]
+                    "Home Centers": [0.2, 0.2]
+                    "AI Apps": [0.1, 0.3]
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="box box-defense" style="margin-top:0; height: 100%; box-sizing: border-box;">
+                    <h3 style="margin-top:0;">🏰 Amazon等の大手を防ぐ「2つの堀」</h3>
+                    <p><strong>1. 法的障壁（特許）:</strong><br>保証システムに関する複数の技術特許を出願準備中。</p>
+                    <p><strong>2. 技術障壁（データ）:</strong><br>サービスがスケールするほど失敗と成功のデータが蓄積されます。このデータ自体がAIの精度を高め、他社が追いつけない強力な参入障壁となります。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">10 / 11</div>
+    </div>
+
+    <div class="slide">
+        <h2>Ask & Plan & Grand Vision</h2>
+        
+        <div class="flex">
+            <div class="flex-1 box box-highlight" style="margin-top: 0;">
+                <h3 style="margin-top:0; color: var(--accent);">💰 資金調達: ¥30,000,000</h3>
+                <p style="font-size:0.9em; margin-top:-10px;">(Pre-Seed Round)</p>
+                <p><strong>【資金使途】</strong><br>
+                プロダクト開発: 1,500万<br>
+                マーケティング: 1,000万<br>
+                運営費: 500万</p>
+                <p><strong>【マイルストーン (18ヶ月)】</strong><br>
+                初期ユーザー1,550人獲得による「PMF達成」と、HC連携POCの開始。</p>
+            </div>
+            
+            <div class="flex-1 box box-vision" style="margin-top: 0;">
+                <h3 style="margin-top:0; color: var(--vision);">🌍 Grand Vision</h3>
+                <p>この3,000万円は、単なる園芸アプリへの投資ではありません。<strong>数十兆円規模の保証インフラ市場を創出するための最初のチケット</strong>です。</p>
+                <p>自然の不確実性に挑戦したLaplusのモデルは、Dental Tech（歯科矯正）やFitness Techなど、「結果が保証されず多くの人が挫折している」あらゆる領域へ応用可能です。</p>
+            </div>
+        </div>
+
+        <div class="speaker-note">
+            あなたの周りにある「結果が保証されず多くの人が挫折していること」は何でしょうか？もしそれらの成功が月額料金で保証されるとしたら、どんな新しい市場が生まれるか。ぜひ一緒にこの未来を創りましょう。
+        </div>
+        <div class="slide-number">11 / 11</div>
+    </div>
+
+</body>
+</html>
